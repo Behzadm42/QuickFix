@@ -1,0 +1,284 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1555A788-4464-4BA5-97CA-2305F4BEF529}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>WindowsFormsApp1</RootNamespace>
+    <AssemblyName>QuickFix</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>download.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DateTimeSelector">
+      <HintPath>..\..\..\..\DateTimeSelector.dll</HintPath>
+    </Reference>
+    <Reference Include="DevComponents.DotNetBar2, Version=14.1.0.37, Culture=neutral, PublicKeyToken=7eb7c3a35b91de04, processorArchitecture=MSIL" />
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net40\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Guna.UI2">
+      <HintPath>..\..\..\..\C#\Guna UI Framework Ultimate 2.0.0.1\Guna UI Framework Ultimate v2.0.0.1 Lib-Master\Guna.UI2 WinForms\.net 4.0\Guna.UI2.dll</HintPath>
+    </Reference>
+    <Reference Include="Stimulsoft.Report, Version=2022.1.1.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Packages\Stimulsoft.Report.dll</HintPath>
+    </Reference>
+    <Reference Include="Stimulsoft.Report.Win, Version=2022.1.1.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Packages\Stimulsoft.Report.Win.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="FrmSearch2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmSearch2.Designer.cs">
+      <DependentUpon>FrmSearch2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmInquiryProduct2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmInquiryProduct2.Designer.cs">
+      <DependentUpon>FrmInquiryProduct2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmInquiryUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmInquiryUser.Designer.cs">
+      <DependentUpon>FrmInquiryUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmSearch.Designer.cs">
+      <DependentUpon>FrmSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmLogin.Designer.cs">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmUsers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmUsers.Designer.cs">
+      <DependentUpon>FrmUsers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmAddUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAddUser.Designer.cs">
+      <DependentUpon>FrmAddUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMain.Designer.cs">
+      <DependentUpon>FrmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmAddProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAddProduct.Designer.cs">
+      <DependentUpon>FrmAddProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmManageGroup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmManageGroup.Designer.cs">
+      <DependentUpon>FrmManageGroup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmInquiryProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmInquiryProduct.Designer.cs">
+      <DependentUpon>FrmInquiryProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmSetting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmSetting.Designer.cs">
+      <DependentUpon>FrmSetting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmDashbord.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDashbord.Designer.cs">
+      <DependentUpon>FrmDashbord.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmPrudact.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPrudact.Designer.cs">
+      <DependentUpon>FrmPrudact.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmContact.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmContact.Designer.cs">
+      <DependentUpon>FrmContact.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FrmAddProduct.resx">
+      <DependentUpon>FrmAddProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmAddUser.resx">
+      <DependentUpon>FrmAddUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmInquiryProduct.resx">
+      <DependentUpon>FrmInquiryProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmInquiryProduct2.resx">
+      <DependentUpon>FrmInquiryProduct2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmInquiryUser.resx">
+      <DependentUpon>FrmInquiryUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmLogin.resx">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmManageGroup.resx">
+      <DependentUpon>FrmManageGroup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMain.resx">
+      <DependentUpon>FrmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmContact.resx">
+      <DependentUpon>FrmContact.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmDashbord.resx">
+      <DependentUpon>FrmDashbord.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmPrudact.resx">
+      <DependentUpon>FrmPrudact.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmSearch.resx">
+      <DependentUpon>FrmSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmSearch2.resx">
+      <DependentUpon>FrmSearch2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmSetting.resx">
+      <DependentUpon>FrmSetting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmUsers.resx">
+      <DependentUpon>FrmUsers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="App.Config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BuseinessEntityLayer\BuseinessEntityLayer.csproj">
+      <Project>{04ad9733-8851-47e4-984a-8b2733ff8dc2}</Project>
+      <Name>BuseinessEntityLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BusinessLogicLayer\BusinessLogicLayer.csproj">
+      <Project>{4dedb2f7-a0ff-465e-97bd-6426e765e7f7}</Project>
+      <Name>BusinessLogicLayer</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="download.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>

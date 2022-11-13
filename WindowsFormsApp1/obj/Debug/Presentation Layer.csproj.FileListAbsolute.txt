@@ -1,0 +1,77 @@
+G:\Programming\Last final project\Device management automation repair\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\Presentation Layer.csproj.AssemblyReference.cache
+G:\Programming\Last final project\Device management automation repair\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.FrmAddUser.resources
+G:\Programming\Last final project\Device management automation repair\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.FrmLogin.resources
+G:\Programming\Last final project\Device management automation repair\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.FrmManageGroup.resources
+G:\Programming\Last final project\Device management automation repair\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.FrmMain.resources
+G:\Programming\Last final project\Device management automation repair\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.FrmContact.resources
+G:\Programming\Last final project\Device management automation repair\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.FrmDashbord.resources
+G:\Programming\Last final project\Device management automation repair\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.FrmPrudact.resources
+G:\Programming\Last final project\Device management automation repair\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.FrmSearch.resources
+G:\Programming\Last final project\Device management automation repair\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.FrmSetting.resources
+G:\Programming\Last final project\Device management automation repair\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Properties.Resources.resources
+G:\Programming\Last final project\Device management automation repair\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\Presentation Layer.csproj.GenerateResource.cache
+G:\Programming\Last final project\Device management automation repair\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\Presentation Layer.csproj.CoreCompileInputs.cache
+G:\Programming\Last final project\Device management automation repair\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
+G:\Programming\Last final project\Device management automation repair\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb
+G:\Programming\Last final project\Device management automation repair\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe.config
+G:\Programming\Last final project\Device management automation repair\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe
+G:\Programming\Last final project\Device management automation repair\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.pdb
+G:\Programming\Last final project\Device management automation repair\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\BuseinessEntityLayer.dll
+G:\Programming\Last final project\Device management automation repair\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\BusinessLogicLayer.dll
+G:\Programming\Last final project\Device management automation repair\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\DevComponents.DotNetBar2.dll
+G:\Programming\Last final project\Device management automation repair\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\EntityFramework.dll
+G:\Programming\Last final project\Device management automation repair\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\EntityFramework.SqlServer.dll
+G:\Programming\Last final project\Device management automation repair\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\Guna.UI2.dll
+G:\Programming\Last final project\Device management automation repair\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\DataAccessLayer.dll
+G:\Programming\Last final project\Device management automation repair\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\BuseinessEntityLayer.pdb
+G:\Programming\Last final project\Device management automation repair\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\BuseinessEntityLayer.dll.config
+G:\Programming\Last final project\Device management automation repair\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\BusinessLogicLayer.pdb
+G:\Programming\Last final project\Device management automation repair\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\DevComponents.DotNetBar2.xml
+G:\Programming\Last final project\Device management automation repair\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\EntityFramework.SqlServer.xml
+G:\Programming\Last final project\Device management automation repair\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\DataAccessLayer.pdb
+G:\Programming\Last final project\Device management automation repair\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\Presentation Layer.csproj.CopyComplete
+G:\Programming\C#\Last final project\Device management automation repair\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\QuickFix.exe.config
+G:\Programming\C#\Last final project\Device management automation repair\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\QuickFix.exe
+G:\Programming\C#\Last final project\Device management automation repair\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\QuickFix.pdb
+G:\Programming\C#\Last final project\Device management automation repair\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\BuseinessEntityLayer.dll
+G:\Programming\C#\Last final project\Device management automation repair\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\BusinessLogicLayer.dll
+G:\Programming\C#\Last final project\Device management automation repair\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\DateTimeSelector.dll
+G:\Programming\C#\Last final project\Device management automation repair\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\DevComponents.DotNetBar2.dll
+G:\Programming\C#\Last final project\Device management automation repair\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\EntityFramework.SqlServer.dll
+G:\Programming\C#\Last final project\Device management automation repair\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\Stimulsoft.Report.dll
+G:\Programming\C#\Last final project\Device management automation repair\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\Stimulsoft.Report.Win.dll
+G:\Programming\C#\Last final project\Device management automation repair\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\EntityFramework.dll
+G:\Programming\C#\Last final project\Device management automation repair\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\DataAccessLayer.dll
+G:\Programming\C#\Last final project\Device management automation repair\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\Stimulsoft.Base.dll
+G:\Programming\C#\Last final project\Device management automation repair\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\Stimulsoft.Data.dll
+G:\Programming\C#\Last final project\Device management automation repair\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\Stimulsoft.Controls.Win.dll
+G:\Programming\C#\Last final project\Device management automation repair\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\Stimulsoft.Controls.dll
+G:\Programming\C#\Last final project\Device management automation repair\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\BuseinessEntityLayer.pdb
+G:\Programming\C#\Last final project\Device management automation repair\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\BuseinessEntityLayer.dll.config
+G:\Programming\C#\Last final project\Device management automation repair\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\BusinessLogicLayer.pdb
+G:\Programming\C#\Last final project\Device management automation repair\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\DevComponents.DotNetBar2.xml
+G:\Programming\C#\Last final project\Device management automation repair\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\EntityFramework.SqlServer.xml
+G:\Programming\C#\Last final project\Device management automation repair\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\DataAccessLayer.pdb
+G:\Programming\C#\Last final project\Device management automation repair\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\DataAccessLayer.dll.config
+G:\Programming\C#\Last final project\Device management automation repair\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\Presentation Layer.csproj.AssemblyReference.cache
+G:\Programming\C#\Last final project\Device management automation repair\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.FrmAddProduct.resources
+G:\Programming\C#\Last final project\Device management automation repair\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.FrmAddUser.resources
+G:\Programming\C#\Last final project\Device management automation repair\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.FrmInquiryProduct.resources
+G:\Programming\C#\Last final project\Device management automation repair\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.FrmInquiryProduct2.resources
+G:\Programming\C#\Last final project\Device management automation repair\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.FrmInquiryUser.resources
+G:\Programming\C#\Last final project\Device management automation repair\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.FrmLogin.resources
+G:\Programming\C#\Last final project\Device management automation repair\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.FrmManageGroup.resources
+G:\Programming\C#\Last final project\Device management automation repair\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.FrmMain.resources
+G:\Programming\C#\Last final project\Device management automation repair\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.FrmContact.resources
+G:\Programming\C#\Last final project\Device management automation repair\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.FrmDashbord.resources
+G:\Programming\C#\Last final project\Device management automation repair\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.FrmPrudact.resources
+G:\Programming\C#\Last final project\Device management automation repair\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.FrmSearch.resources
+G:\Programming\C#\Last final project\Device management automation repair\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.FrmSearch2.resources
+G:\Programming\C#\Last final project\Device management automation repair\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.FrmSetting.resources
+G:\Programming\C#\Last final project\Device management automation repair\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.FrmUsers.resources
+G:\Programming\C#\Last final project\Device management automation repair\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Properties.Resources.resources
+G:\Programming\C#\Last final project\Device management automation repair\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\Presentation Layer.csproj.GenerateResource.cache
+G:\Programming\C#\Last final project\Device management automation repair\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\Presentation Layer.csproj.CoreCompileInputs.cache
+G:\Programming\C#\Last final project\Device management automation repair\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\Presentation Layer.csproj.CopyComplete
+G:\Programming\C#\Last final project\Device management automation repair\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\QuickFix.exe
+G:\Programming\C#\Last final project\Device management automation repair\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\QuickFix.pdb

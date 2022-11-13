@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Device_RepairModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="tblUserAccessRole">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Section" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="IsSave" Type="bit" />
+    <Property Name="IsEdit" Type="bit" />
+    <Property Name="IsDelete" Type="bit" />
+    <Property Name="IsSearch" Type="bit" />
+    <Property Name="UserGroupID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tblUserGroup">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="GroupTitle" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tblUsers">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Family" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Post" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="UserName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Password" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="UserGroupID" Type="int" Nullable="false" />
+    <Property Name="Status" Type="bit" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_tblUserAccessRole_tblUserAccessRole">
+    <End Role="tblUserGroup" Type="Self.tblUserGroup" Multiplicity="1" />
+    <End Role="tblUserAccessRole" Type="Self.tblUserAccessRole" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblUserGroup">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tblUserAccessRole">
+        <PropertyRef Name="UserGroupID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblUsers_tblUserGroup">
+    <End Role="tblUserGroup" Type="Self.tblUserGroup" Multiplicity="1" />
+    <End Role="tblUsers" Type="Self.tblUsers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblUserGroup">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tblUsers">
+        <PropertyRef Name="UserGroupID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Device_RepairModelStoreContainer">
+    <EntitySet Name="tblUserAccessRole" EntityType="Self.tblUserAccessRole" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblUserGroup" EntityType="Self.tblUserGroup" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblUsers" EntityType="Self.tblUsers" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_tblUserAccessRole_tblUserAccessRole" Association="Self.FK_tblUserAccessRole_tblUserAccessRole">
+      <End Role="tblUserGroup" EntitySet="tblUserGroup" />
+      <End Role="tblUserAccessRole" EntitySet="tblUserAccessRole" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblUsers_tblUserGroup" Association="Self.FK_tblUsers_tblUserGroup">
+      <End Role="tblUserGroup" EntitySet="tblUserGroup" />
+      <End Role="tblUsers" EntitySet="tblUsers" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

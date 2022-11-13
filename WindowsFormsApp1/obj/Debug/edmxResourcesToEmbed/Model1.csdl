@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Device_RepairModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="tblUserGroup">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="GroupTitle" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="tblUserAccessRoles" Relationship="Device_RepairModel.FK_tblUserAccessRole_tblUserAccessRole" FromRole="tblUserGroup" ToRole="tblUserAccessRole" />
+    <NavigationProperty Name="tblUsers" Relationship="Device_RepairModel.FK_tblUsers_tblUserGroup" FromRole="tblUserGroup" ToRole="tblUser" />
+  </EntityType>
+  <EntityContainer Name="DREntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="tblUserGroups" EntityType="Self.tblUserGroup" />
+    <EntitySet Name="tblUserAccessRoles" EntityType="Device_RepairModel.tblUserAccessRole" />
+    <AssociationSet Name="FK_tblUserAccessRole_tblUserAccessRole" Association="Device_RepairModel.FK_tblUserAccessRole_tblUserAccessRole">
+      <End Role="tblUserGroup" EntitySet="tblUserGroups" />
+      <End Role="tblUserAccessRole" EntitySet="tblUserAccessRoles" />
+    </AssociationSet>
+    <EntitySet Name="tblUsers" EntityType="Device_RepairModel.tblUser" />
+    <AssociationSet Name="FK_tblUsers_tblUserGroup" Association="Device_RepairModel.FK_tblUsers_tblUserGroup">
+      <End Role="tblUserGroup" EntitySet="tblUserGroups" />
+      <End Role="tblUser" EntitySet="tblUsers" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="tblUserAccessRole">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Section" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="IsSave" Type="Boolean" />
+    <Property Name="IsEdit" Type="Boolean" />
+    <Property Name="IsDelete" Type="Boolean" />
+    <Property Name="IsSearch" Type="Boolean" />
+    <Property Name="UserGroupID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="tblUserGroup" Relationship="Device_RepairModel.FK_tblUserAccessRole_tblUserAccessRole" FromRole="tblUserAccessRole" ToRole="tblUserGroup" />
+  </EntityType>
+  <Association Name="FK_tblUserAccessRole_tblUserAccessRole">
+    <End Type="Device_RepairModel.tblUserGroup" Role="tblUserGroup" Multiplicity="1" />
+    <End Type="Device_RepairModel.tblUserAccessRole" Role="tblUserAccessRole" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblUserGroup">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tblUserAccessRole">
+        <PropertyRef Name="UserGroupID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="tblUser">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Family" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Post" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UserName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Password" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UserGroupID" Type="Int32" Nullable="false" />
+    <Property Name="Status" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="tblUserGroup" Relationship="Device_RepairModel.FK_tblUsers_tblUserGroup" FromRole="tblUser" ToRole="tblUserGroup" />
+  </EntityType>
+  <Association Name="FK_tblUsers_tblUserGroup">
+    <End Type="Device_RepairModel.tblUserGroup" Role="tblUserGroup" Multiplicity="1" />
+    <End Type="Device_RepairModel.tblUser" Role="tblUser" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblUserGroup">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tblUser">
+        <PropertyRef Name="UserGroupID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

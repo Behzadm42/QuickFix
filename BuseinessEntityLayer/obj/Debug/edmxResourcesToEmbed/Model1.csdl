@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Device_RepairModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="tblUserGroup">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="GroupTitle" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="tblUserAccessRoles" Relationship="Device_RepairModel.FK_tblUserAccessRole_tblUserAccessRole" FromRole="tblUserGroup" ToRole="tblUserAccessRole" />
+    <NavigationProperty Name="tblUsers" Relationship="Device_RepairModel.FK_tblUsers_tblUserGroup" FromRole="tblUserGroup" ToRole="tblUser" />
+  </EntityType>
+  <EntityContainer Name="DREntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="tblUserGroups" EntityType="Self.tblUserGroup" />
+    <EntitySet Name="tblUserAccessRoles" EntityType="Device_RepairModel.tblUserAccessRole" />
+    <AssociationSet Name="FK_tblUserAccessRole_tblUserAccessRole" Association="Device_RepairModel.FK_tblUserAccessRole_tblUserAccessRole">
+      <End Role="tblUserGroup" EntitySet="tblUserGroups" />
+      <End Role="tblUserAccessRole" EntitySet="tblUserAccessRoles" />
+    </AssociationSet>
+    <EntitySet Name="tblUsers" EntityType="Device_RepairModel.tblUser" />
+    <AssociationSet Name="FK_tblUsers_tblUserGroup" Association="Device_RepairModel.FK_tblUsers_tblUserGroup">
+      <End Role="tblUserGroup" EntitySet="tblUserGroups" />
+      <End Role="tblUser" EntitySet="tblUsers" />
+    </AssociationSet>
+    <EntitySet Name="tblProducts" EntityType="Device_RepairModel.tblProduct" />
+    <FunctionImport Name="spSearch" ReturnType="Collection(Device_RepairModel.spSearch_Result)">
+      <Parameter Name="ReceiptNumber" Mode="In" Type="Int32" />
+      <Parameter Name="CustomerName" Mode="In" Type="String" />
+      <Parameter Name="CompanyName" Mode="In" Type="String" />
+      <Parameter Name="DeviceModel" Mode="In" Type="String" />
+    </FunctionImport>
+  </EntityContainer>
+  <EntityType Name="tblUserAccessRole">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Section" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="IsSave" Type="Boolean" />
+    <Property Name="IsEdit" Type="Boolean" />
+    <Property Name="IsDelete" Type="Boolean" />
+    <Property Name="IsSearch" Type="Boolean" />
+    <Property Name="UserGroupID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="tblUserGroup" Relationship="Device_RepairModel.FK_tblUserAccessRole_tblUserAccessRole" FromRole="tblUserAccessRole" ToRole="tblUserGroup" />
+  </EntityType>
+  <Association Name="FK_tblUserAccessRole_tblUserAccessRole">
+    <End Type="Device_RepairModel.tblUserGroup" Role="tblUserGroup" Multiplicity="1" />
+    <End Type="Device_RepairModel.tblUserAccessRole" Role="tblUserAccessRole" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblUserGroup">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tblUserAccessRole">
+        <PropertyRef Name="UserGroupID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="tblUser">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Family" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Post" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UserName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Password" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UserGroupID" Type="Int32" Nullable="false" />
+    <Property Name="Status" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="tblUserGroup" Relationship="Device_RepairModel.FK_tblUsers_tblUserGroup" FromRole="tblUser" ToRole="tblUserGroup" />
+  </EntityType>
+  <Association Name="FK_tblUsers_tblUserGroup">
+    <End Type="Device_RepairModel.tblUserGroup" Role="tblUserGroup" Multiplicity="1" />
+    <End Type="Device_RepairModel.tblUser" Role="tblUser" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblUserGroup">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tblUser">
+        <PropertyRef Name="UserGroupID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="tblProduct">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ReceiptNumber" Type="Int32" Nullable="false" />
+    <Property Name="CustomerName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Address" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PhoneNumber" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CompanyName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DeviceModel" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Color" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SerialNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="EntryDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DeliveryDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Warranty" Type="Boolean" />
+    <Property Name="Problems" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="MinimumCost" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="EarnestMoney" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Attachments" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="RepairMan" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Parts" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PartsCost" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="FinalCost" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Situation" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="KeepingPlace" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <ComplexType Name="spSearch_Result">
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="Int32" Name="ReceiptNumber" Nullable="false" />
+    <Property Type="String" Name="CustomerName" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Address" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="PhoneNumber" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="CompanyName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="DeviceModel" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Color" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="SerialNumber" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="EntryDate" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="DeliveryDate" Nullable="true" MaxLength="50" />
+    <Property Type="Boolean" Name="Warranty" Nullable="true" />
+    <Property Type="String" Name="Problems" Nullable="false" />
+    <Property Type="String" Name="MinimumCost" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="EarnestMoney" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Attachments" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="RepairMan" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Parts" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="PartsCost" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="FinalCost" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Situation" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Description" Nullable="true" />
+    <Property Type="String" Name="KeepingPlace" Nullable="true" MaxLength="50" />
+  </ComplexType>
+</Schema>

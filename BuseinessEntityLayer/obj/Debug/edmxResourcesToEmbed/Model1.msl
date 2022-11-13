@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Device_RepairModelStoreContainer" CdmEntityContainer="DREntities">
+    <EntitySetMapping Name="tblUserGroups">
+      <EntityTypeMapping TypeName="Device_RepairModel.tblUserGroup">
+        <MappingFragment StoreEntitySet="tblUserGroup">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="GroupTitle" ColumnName="GroupTitle" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblUserAccessRoles">
+      <EntityTypeMapping TypeName="Device_RepairModel.tblUserAccessRole">
+        <MappingFragment StoreEntitySet="tblUserAccessRole">
+          <ScalarProperty Name="UserGroupID" ColumnName="UserGroupID" />
+          <ScalarProperty Name="IsSearch" ColumnName="IsSearch" />
+          <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+          <ScalarProperty Name="IsEdit" ColumnName="IsEdit" />
+          <ScalarProperty Name="IsSave" ColumnName="IsSave" />
+          <ScalarProperty Name="Section" ColumnName="Section" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblUsers">
+      <EntityTypeMapping TypeName="Device_RepairModel.tblUser">
+        <MappingFragment StoreEntitySet="tblUsers">
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="UserGroupID" ColumnName="UserGroupID" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="Post" ColumnName="Post" />
+          <ScalarProperty Name="Family" ColumnName="Family" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblProducts">
+      <EntityTypeMapping TypeName="Device_RepairModel.tblProduct">
+        <MappingFragment StoreEntitySet="tblProduct">
+          <ScalarProperty Name="KeepingPlace" ColumnName="KeepingPlace" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Situation" ColumnName="Situation" />
+          <ScalarProperty Name="FinalCost" ColumnName="FinalCost" />
+          <ScalarProperty Name="PartsCost" ColumnName="PartsCost" />
+          <ScalarProperty Name="Parts" ColumnName="Parts" />
+          <ScalarProperty Name="RepairMan" ColumnName="RepairMan" />
+          <ScalarProperty Name="Attachments" ColumnName="Attachments" />
+          <ScalarProperty Name="EarnestMoney" ColumnName="EarnestMoney" />
+          <ScalarProperty Name="MinimumCost" ColumnName="MinimumCost" />
+          <ScalarProperty Name="Problems" ColumnName="Problems" />
+          <ScalarProperty Name="Warranty" ColumnName="Warranty" />
+          <ScalarProperty Name="DeliveryDate" ColumnName="DeliveryDate" />
+          <ScalarProperty Name="EntryDate" ColumnName="EntryDate" />
+          <ScalarProperty Name="SerialNumber" ColumnName="SerialNumber" />
+          <ScalarProperty Name="Color" ColumnName="Color" />
+          <ScalarProperty Name="DeviceModel" ColumnName="DeviceModel" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+          <ScalarProperty Name="ReceiptNumber" ColumnName="ReceiptNumber" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="spSearch" FunctionName="Device_RepairModel.Store.spSearch">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Device_RepairModel.spSearch_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="ReceiptNumber" ColumnName="ReceiptNumber" />
+          <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+          <ScalarProperty Name="DeviceModel" ColumnName="DeviceModel" />
+          <ScalarProperty Name="Color" ColumnName="Color" />
+          <ScalarProperty Name="SerialNumber" ColumnName="SerialNumber" />
+          <ScalarProperty Name="EntryDate" ColumnName="EntryDate" />
+          <ScalarProperty Name="DeliveryDate" ColumnName="DeliveryDate" />
+          <ScalarProperty Name="Warranty" ColumnName="Warranty" />
+          <ScalarProperty Name="Problems" ColumnName="Problems" />
+          <ScalarProperty Name="MinimumCost" ColumnName="MinimumCost" />
+          <ScalarProperty Name="EarnestMoney" ColumnName="EarnestMoney" />
+          <ScalarProperty Name="Attachments" ColumnName="Attachments" />
+          <ScalarProperty Name="RepairMan" ColumnName="RepairMan" />
+          <ScalarProperty Name="Parts" ColumnName="Parts" />
+          <ScalarProperty Name="PartsCost" ColumnName="PartsCost" />
+          <ScalarProperty Name="FinalCost" ColumnName="FinalCost" />
+          <ScalarProperty Name="Situation" ColumnName="Situation" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="KeepingPlace" ColumnName="KeepingPlace" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>

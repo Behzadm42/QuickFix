@@ -1,0 +1,371 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Device_RepairModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="tblProduct">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ReceiptNumber" Type="int" Nullable="false" />
+          <Property Name="CustomerName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Address" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="PhoneNumber" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="CompanyName" Type="nvarchar" MaxLength="50" />
+          <Property Name="DeviceModel" Type="nvarchar" MaxLength="50" />
+          <Property Name="Color" Type="nvarchar" MaxLength="50" />
+          <Property Name="SerialNumber" Type="nvarchar" MaxLength="50" />
+          <Property Name="EntryDate" Type="nvarchar" MaxLength="50" />
+          <Property Name="DeliveryDate" Type="nvarchar" MaxLength="50" />
+          <Property Name="Warranty" Type="bit" />
+          <Property Name="Problems" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="MinimumCost" Type="nvarchar" MaxLength="50" />
+          <Property Name="EarnestMoney" Type="nvarchar" MaxLength="50" />
+          <Property Name="Attachments" Type="nvarchar" MaxLength="50" />
+          <Property Name="RepairMan" Type="nvarchar" MaxLength="50" />
+          <Property Name="Parts" Type="nvarchar" MaxLength="50" />
+          <Property Name="PartsCost" Type="nvarchar" MaxLength="50" />
+          <Property Name="FinalCost" Type="nvarchar" MaxLength="50" />
+          <Property Name="Situation" Type="nvarchar" MaxLength="50" />
+          <Property Name="Description" Type="nvarchar(max)" />
+          <Property Name="KeepingPlace" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tblUserAccessRole">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Section" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="IsSave" Type="bit" />
+          <Property Name="IsEdit" Type="bit" />
+          <Property Name="IsDelete" Type="bit" />
+          <Property Name="IsSearch" Type="bit" />
+          <Property Name="UserGroupID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tblUserGroup">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="GroupTitle" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tblUsers">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Family" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Post" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="UserName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Password" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="UserGroupID" Type="int" Nullable="false" />
+          <Property Name="Status" Type="bit" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_tblUserAccessRole_tblUserAccessRole">
+          <End Role="tblUserGroup" Type="Self.tblUserGroup" Multiplicity="1" />
+          <End Role="tblUserAccessRole" Type="Self.tblUserAccessRole" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblUserGroup">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="tblUserAccessRole">
+              <PropertyRef Name="UserGroupID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblUsers_tblUserGroup">
+          <End Role="tblUserGroup" Type="Self.tblUserGroup" Multiplicity="1" />
+          <End Role="tblUsers" Type="Self.tblUsers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblUserGroup">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="tblUsers">
+              <PropertyRef Name="UserGroupID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="spSearch" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ReceiptNumber" Type="int" Mode="In" />
+          <Parameter Name="CustomerName" Type="nvarchar" Mode="In" />
+          <Parameter Name="CompanyName" Type="nvarchar" Mode="In" />
+          <Parameter Name="DeviceModel" Type="nvarchar" Mode="In" />
+        </Function>
+        <EntityContainer Name="Device_RepairModelStoreContainer">
+          <EntitySet Name="tblProduct" EntityType="Self.tblProduct" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblUserAccessRole" EntityType="Self.tblUserAccessRole" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblUserGroup" EntityType="Self.tblUserGroup" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblUsers" EntityType="Self.tblUsers" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_tblUserAccessRole_tblUserAccessRole" Association="Self.FK_tblUserAccessRole_tblUserAccessRole">
+            <End Role="tblUserGroup" EntitySet="tblUserGroup" />
+            <End Role="tblUserAccessRole" EntitySet="tblUserAccessRole" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblUsers_tblUserGroup" Association="Self.FK_tblUsers_tblUserGroup">
+            <End Role="tblUserGroup" EntitySet="tblUserGroup" />
+            <End Role="tblUsers" EntitySet="tblUsers" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Device_RepairModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="tblUserGroup">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="GroupTitle" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="tblUserAccessRoles" Relationship="Device_RepairModel.FK_tblUserAccessRole_tblUserAccessRole" FromRole="tblUserGroup" ToRole="tblUserAccessRole" />
+          <NavigationProperty Name="tblUsers" Relationship="Device_RepairModel.FK_tblUsers_tblUserGroup" FromRole="tblUserGroup" ToRole="tblUser" />
+        </EntityType>
+        <EntityContainer Name="DREntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="tblUserGroups" EntityType="Self.tblUserGroup" />
+          <EntitySet Name="tblUserAccessRoles" EntityType="Device_RepairModel.tblUserAccessRole" />
+          <AssociationSet Name="FK_tblUserAccessRole_tblUserAccessRole" Association="Device_RepairModel.FK_tblUserAccessRole_tblUserAccessRole">
+            <End Role="tblUserGroup" EntitySet="tblUserGroups" />
+            <End Role="tblUserAccessRole" EntitySet="tblUserAccessRoles" />
+          </AssociationSet>
+          <EntitySet Name="tblUsers" EntityType="Device_RepairModel.tblUser" />
+          <AssociationSet Name="FK_tblUsers_tblUserGroup" Association="Device_RepairModel.FK_tblUsers_tblUserGroup">
+            <End Role="tblUserGroup" EntitySet="tblUserGroups" />
+            <End Role="tblUser" EntitySet="tblUsers" />
+          </AssociationSet>
+          <EntitySet Name="tblProducts" EntityType="Device_RepairModel.tblProduct" />
+          <FunctionImport Name="spSearch" ReturnType="Collection(Device_RepairModel.spSearch_Result)">
+            <Parameter Name="ReceiptNumber" Mode="In" Type="Int32" />
+            <Parameter Name="CustomerName" Mode="In" Type="String" />
+            <Parameter Name="CompanyName" Mode="In" Type="String" />
+            <Parameter Name="DeviceModel" Mode="In" Type="String" />
+          </FunctionImport>
+        </EntityContainer>
+        <EntityType Name="tblUserAccessRole">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Section" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="IsSave" Type="Boolean" />
+          <Property Name="IsEdit" Type="Boolean" />
+          <Property Name="IsDelete" Type="Boolean" />
+          <Property Name="IsSearch" Type="Boolean" />
+          <Property Name="UserGroupID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="tblUserGroup" Relationship="Device_RepairModel.FK_tblUserAccessRole_tblUserAccessRole" FromRole="tblUserAccessRole" ToRole="tblUserGroup" />
+        </EntityType>
+        <Association Name="FK_tblUserAccessRole_tblUserAccessRole">
+          <End Type="Device_RepairModel.tblUserGroup" Role="tblUserGroup" Multiplicity="1" />
+          <End Type="Device_RepairModel.tblUserAccessRole" Role="tblUserAccessRole" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblUserGroup">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="tblUserAccessRole">
+              <PropertyRef Name="UserGroupID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="tblUser">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Family" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Post" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="UserName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="UserGroupID" Type="Int32" Nullable="false" />
+          <Property Name="Status" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="tblUserGroup" Relationship="Device_RepairModel.FK_tblUsers_tblUserGroup" FromRole="tblUser" ToRole="tblUserGroup" />
+        </EntityType>
+        <Association Name="FK_tblUsers_tblUserGroup">
+          <End Type="Device_RepairModel.tblUserGroup" Role="tblUserGroup" Multiplicity="1" />
+          <End Type="Device_RepairModel.tblUser" Role="tblUser" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblUserGroup">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="tblUser">
+              <PropertyRef Name="UserGroupID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="tblProduct">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ReceiptNumber" Type="Int32" Nullable="false" />
+          <Property Name="CustomerName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Address" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PhoneNumber" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CompanyName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DeviceModel" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Color" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SerialNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="EntryDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DeliveryDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Warranty" Type="Boolean" />
+          <Property Name="Problems" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="MinimumCost" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="EarnestMoney" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Attachments" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="RepairMan" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Parts" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PartsCost" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="FinalCost" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Situation" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="KeepingPlace" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <ComplexType Name="spSearch_Result">
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="Int32" Name="ReceiptNumber" Nullable="false" />
+          <Property Type="String" Name="CustomerName" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="Address" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="PhoneNumber" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="CompanyName" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="DeviceModel" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Color" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SerialNumber" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="EntryDate" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="DeliveryDate" Nullable="true" MaxLength="50" />
+          <Property Type="Boolean" Name="Warranty" Nullable="true" />
+          <Property Type="String" Name="Problems" Nullable="false" />
+          <Property Type="String" Name="MinimumCost" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="EarnestMoney" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Attachments" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="RepairMan" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Parts" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="PartsCost" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="FinalCost" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Situation" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Description" Nullable="true" />
+          <Property Type="String" Name="KeepingPlace" Nullable="true" MaxLength="50" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Device_RepairModelStoreContainer" CdmEntityContainer="DREntities">
+          <EntitySetMapping Name="tblUserGroups">
+            <EntityTypeMapping TypeName="Device_RepairModel.tblUserGroup">
+              <MappingFragment StoreEntitySet="tblUserGroup">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="GroupTitle" ColumnName="GroupTitle" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblUserAccessRoles">
+            <EntityTypeMapping TypeName="Device_RepairModel.tblUserAccessRole">
+              <MappingFragment StoreEntitySet="tblUserAccessRole">
+                <ScalarProperty Name="UserGroupID" ColumnName="UserGroupID" />
+                <ScalarProperty Name="IsSearch" ColumnName="IsSearch" />
+                <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+                <ScalarProperty Name="IsEdit" ColumnName="IsEdit" />
+                <ScalarProperty Name="IsSave" ColumnName="IsSave" />
+                <ScalarProperty Name="Section" ColumnName="Section" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblUsers">
+            <EntityTypeMapping TypeName="Device_RepairModel.tblUser">
+              <MappingFragment StoreEntitySet="tblUsers">
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="UserGroupID" ColumnName="UserGroupID" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="Post" ColumnName="Post" />
+                <ScalarProperty Name="Family" ColumnName="Family" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblProducts">
+            <EntityTypeMapping TypeName="Device_RepairModel.tblProduct">
+              <MappingFragment StoreEntitySet="tblProduct">
+                <ScalarProperty Name="KeepingPlace" ColumnName="KeepingPlace" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Situation" ColumnName="Situation" />
+                <ScalarProperty Name="FinalCost" ColumnName="FinalCost" />
+                <ScalarProperty Name="PartsCost" ColumnName="PartsCost" />
+                <ScalarProperty Name="Parts" ColumnName="Parts" />
+                <ScalarProperty Name="RepairMan" ColumnName="RepairMan" />
+                <ScalarProperty Name="Attachments" ColumnName="Attachments" />
+                <ScalarProperty Name="EarnestMoney" ColumnName="EarnestMoney" />
+                <ScalarProperty Name="MinimumCost" ColumnName="MinimumCost" />
+                <ScalarProperty Name="Problems" ColumnName="Problems" />
+                <ScalarProperty Name="Warranty" ColumnName="Warranty" />
+                <ScalarProperty Name="DeliveryDate" ColumnName="DeliveryDate" />
+                <ScalarProperty Name="EntryDate" ColumnName="EntryDate" />
+                <ScalarProperty Name="SerialNumber" ColumnName="SerialNumber" />
+                <ScalarProperty Name="Color" ColumnName="Color" />
+                <ScalarProperty Name="DeviceModel" ColumnName="DeviceModel" />
+                <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+                <ScalarProperty Name="ReceiptNumber" ColumnName="ReceiptNumber" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="spSearch" FunctionName="Device_RepairModel.Store.spSearch">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Device_RepairModel.spSearch_Result">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="ReceiptNumber" ColumnName="ReceiptNumber" />
+                <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+                <ScalarProperty Name="DeviceModel" ColumnName="DeviceModel" />
+                <ScalarProperty Name="Color" ColumnName="Color" />
+                <ScalarProperty Name="SerialNumber" ColumnName="SerialNumber" />
+                <ScalarProperty Name="EntryDate" ColumnName="EntryDate" />
+                <ScalarProperty Name="DeliveryDate" ColumnName="DeliveryDate" />
+                <ScalarProperty Name="Warranty" ColumnName="Warranty" />
+                <ScalarProperty Name="Problems" ColumnName="Problems" />
+                <ScalarProperty Name="MinimumCost" ColumnName="MinimumCost" />
+                <ScalarProperty Name="EarnestMoney" ColumnName="EarnestMoney" />
+                <ScalarProperty Name="Attachments" ColumnName="Attachments" />
+                <ScalarProperty Name="RepairMan" ColumnName="RepairMan" />
+                <ScalarProperty Name="Parts" ColumnName="Parts" />
+                <ScalarProperty Name="PartsCost" ColumnName="PartsCost" />
+                <ScalarProperty Name="FinalCost" ColumnName="FinalCost" />
+                <ScalarProperty Name="Situation" ColumnName="Situation" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="KeepingPlace" ColumnName="KeepingPlace" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
