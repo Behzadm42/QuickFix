@@ -2,6 +2,7 @@
 using BusinessLogicLayer;
 using Stimulsoft.Report;
 using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace WindowsFormsApp1
@@ -39,7 +40,7 @@ namespace WindowsFormsApp1
             if (tblProduct.Warranty == true)
                 radioButton1.Checked = true;
             else
-                radioButton2.Checked = false;
+                radioButton2.Checked = true;
         }
         tblProduct readcontolrs()
         {
@@ -75,9 +76,16 @@ namespace WindowsFormsApp1
         }
         private void FrmInquiryProduct2_Load(object sender, EventArgs e)
         {
+            BLL_User bLL_User = new BLL_User();
+            List<tblUser> tblUser = new List<tblUser>();
+            tblUser = bLL_User.read1("تعمیرکار");
+            comboBoxRepairMan.DataSource = null;
+            comboBoxRepairMan.DataSource = tblUser;
+            comboBoxRepairMan.DisplayMember = "Family";
             BLL_Product bLL_Product = new BLL_Product();
             var q = bLL_Product.read(id);
             writeoncontrlos(q);
+            
         }
 
         private void button1_Click(object sender, EventArgs e)

@@ -3,6 +3,7 @@ using BusinessLogicLayer;
 using System;
 using System.Windows.Forms;
 using Stimulsoft.Report;
+using System.Collections.Generic;
 
 namespace WindowsFormsApp1
 {
@@ -82,7 +83,12 @@ namespace WindowsFormsApp1
                 button6.Enabled = true;
             else
                 button6.Enabled = false;
-
+            BLL_User bLL_User = new BLL_User();
+            List<tblUser> tblUser = new List<tblUser>();
+            tblUser = bLL_User.read1("تعمیرکار");
+            comboBoxRepairMan.DataSource = null;
+            comboBoxRepairMan.DataSource = tblUser;
+            comboBoxRepairMan.DisplayMember = "Family";
             BLL_Product bLL_Product = new BLL_Product();
             var q1 = bLL_Product.read();
             count = 0;

@@ -20,15 +20,15 @@ namespace WindowsFormsApp1
             try
             {
                 MailMessage msg = new MailMessage();
-                msg.From = new MailAddress("behzadmovaseghbn1@gmail.com");
+                msg.From = new MailAddress("behzadmovaseghps1@gmail.com");
                 msg.To.Add("behzadmovasegh@ymail.com");
                 msg.Body = guna2TextBox1.Text+"\n"+ guna2TextBox2.Text + "\n" + guna2TextBox3.Text + "\n\n" + guna2TextBox4.Text ;
                 msg.Subject = "suggestion";
                 SmtpClient smtp = new SmtpClient();
                 smtp.Host = "smtp.gmail.com";
                 NetworkCredential ntcd = new NetworkCredential();
-                ntcd.UserName = "behzadmovaseghbn1@gmail.com";
-                ntcd.Password = "gvoxwqmejosxyqpt";
+                ntcd.UserName = "behzadmovaseghps1@gmail.com";
+                ntcd.Password = "yaqxnazwmyxhjunl";
                 smtp.Credentials = ntcd;
                 smtp.EnableSsl = true;
                 smtp.Port = 587;

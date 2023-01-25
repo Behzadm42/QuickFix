@@ -92,7 +92,7 @@ namespace WindowsFormsApp1
             }
             else
             {
-                guna2GroupBox1.Enabled = true;
+                guna2GroupBox1.Enabled = false;
             }
 
         }

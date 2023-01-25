@@ -74,7 +74,7 @@ namespace WindowsFormsApp1
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.ShadowDecoration.Parent = this.guna2Panel1;
             this.guna2Panel1.Size = new System.Drawing.Size(700, 186);
-            this.guna2Panel1.TabIndex = 7;
+            this.guna2Panel1.TabIndex = 0;
             // 
             // guna2CircleProgressBar3
             // 
@@ -188,7 +188,8 @@ namespace WindowsFormsApp1
             this.guna2Panel2.Name = "guna2Panel2";
             this.guna2Panel2.ShadowDecoration.Parent = this.guna2Panel2;
             this.guna2Panel2.Size = new System.Drawing.Size(792, 279);
-            this.guna2Panel2.TabIndex = 0;
+            this.guna2Panel2.TabIndex = 1;
+            this.guna2Panel2.TabStop = true;
             // 
             // maskedTextBoxPhoneNumber
             // 
@@ -286,6 +287,7 @@ namespace WindowsFormsApp1
             this.textBoxReceiptNumber.ShadowDecoration.Parent = this.textBoxReceiptNumber;
             this.textBoxReceiptNumber.Size = new System.Drawing.Size(162, 20);
             this.textBoxReceiptNumber.TabIndex = 0;
+            this.textBoxReceiptNumber.TabStop = false;
             // 
             // textBoxSerialNumber
             // 

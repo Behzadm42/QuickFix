@@ -13,7 +13,6 @@ G:\Programming\C#\Last final project\Device management automation repair\Windows
 G:\Programming\C#\Last final project\Device management automation repair\WindowsFormsApp1\DataAccessLayer\bin\Debug\DataAccessLayer.dll
 G:\Programming\C#\Last final project\Device management automation repair\WindowsFormsApp1\DataAccessLayer\bin\Debug\DataAccessLayer.pdb
 G:\Programming\C#\Last final project\Device management automation repair\WindowsFormsApp1\DataAccessLayer\bin\Debug\BuseinessEntityLayer.dll
-G:\Programming\C#\Last final project\Device management automation repair\WindowsFormsApp1\DataAccessLayer\bin\Debug\EntityFramework.dll
 G:\Programming\C#\Last final project\Device management automation repair\WindowsFormsApp1\DataAccessLayer\bin\Debug\BuseinessEntityLayer.pdb
 G:\Programming\C#\Last final project\Device management automation repair\WindowsFormsApp1\DataAccessLayer\bin\Debug\BuseinessEntityLayer.dll.config
 G:\Programming\C#\Last final project\Device management automation repair\WindowsFormsApp1\DataAccessLayer\obj\Debug\DataAccessLayer.csproj.AssemblyReference.cache
